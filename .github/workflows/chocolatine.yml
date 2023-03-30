@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: wesh wesh cânne à pêche
-      run: rm *
+      run: echo "hello world"
