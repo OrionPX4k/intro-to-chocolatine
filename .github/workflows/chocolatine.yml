@@ -10,7 +10,7 @@ on:
 
 env:
   SOURCE: OrionPX4k/intro-to-chocolatine
-  MIRROR_URL: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-thomas.lebouc"
+  MIRROR_URL: EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-thomas.lebouc
   EXECUTABLES: "replace_vowel"
   GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
 
@@ -70,7 +70,7 @@ jobs:
         chmod +x ./bash_shell/run_epit.sh
         ./bash_shell/run_epit.sh "make tests_run && exit $? || exit 1"
 
-  repository_mirroring:
+  push_to_mirror:
     runs-on: ubuntu-latest
     needs: run_tests
     if: success()
