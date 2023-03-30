@@ -18,7 +18,11 @@ CFLAG = -iquote include
 
 TEST_NAME = tests_run
 
-TEST_OBJ = ./tests/tests_run.c	\
+TEST_SRC = 	./tests/tests_run.c	\
+
+TEST_OBJ =	$(TEST_SRC:.c=.o)
+
+TEST_FLAG = --coverage -lcriterion
 
 all: $(NAME)
 
@@ -27,14 +31,16 @@ $(NAME):
 
 clean:
 	rm -f $(OBJ)
+	rm -f $(TEST_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(TEST_NAME)
+
+tests_run:	$(TEST_OBJ) $(OBJ)
+		$(CC) $(TEST_SRC) $(SRC) -o $(TEST_NAME) $(CFLAG) $(TEST_FLAG)
+		./$(TEST_NAME)
 
 re: fclean all
-
-tests_run: 	clean
-		$(CC) -o $(TEST_NAME) $(TEST_OBJ) --coverage -lcriterion
-		./$(TEST_NAME)
 
 .PHONY: re fclean clean all tests_run

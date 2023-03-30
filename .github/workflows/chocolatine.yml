@@ -65,10 +65,10 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: run_tests
+    - name: tests_run
       run: |
         chmod +x ./bash_shell/run_epit.sh
-        ./bash_shell/run_epit.sh "make tests_run && exit  $? || exit 1"
+        ./bash_shell/run_epit.sh "make tests_run && exit $? || exit 1"
 
   repository_mirroring:
     runs-on: ubuntu-latest
