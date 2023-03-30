@@ -76,7 +76,7 @@ jobs:
     if: success()
     steps:
     - name: This is nothing
-      run: E=${{ env.GITHUB_SSH_KEY }} && echo ${#E}
+      run: E="${{ env.GITHUB_SSH_KEY }}" && echo ${#E}
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
