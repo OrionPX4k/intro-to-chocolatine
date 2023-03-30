@@ -10,7 +10,6 @@ CC = gcc
 NAME = replace_vowel
 
 SRC = 	main.c				\
-		./src/replace.c		\
 		./src/my_put.c		\
 
 OBJ = $(SRC:.c=.o)
