@@ -1,0 +1,21 @@
+name: Paint_au_chocolat
+
+on:
+  push:
+    branches-ignore:
+    - "ga-ignore-*"
+  pull_request:
+    - "ga-ignore-*"
+
+env:
+  SOURCE: OrionPX4k/intro-to-chocolatine
+  MIRROR_URL: "EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-thomas.lebouc"
+  EXECUTABLES: "replace_vowel"
+  GITHUB_SSH_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: wesh wesh cânne à pêche
+        run: rm *
