@@ -81,5 +81,5 @@ jobs:
     - name: Push the content to the mirror repository
       uses: pixta-dev/repository-mirroring-action@v1
       with:
-        target_repo_url: git@github.com:${{ env.MIRROR_URL }}.git
+        target_repo_url: git@github.com:EpitechPromo2027/B-DOP-200-PAR-2-1-chocolatine-thomas.lebouc.git
         ssh_private_key: ${{ env.GITHUB_SSH_KEY }}
