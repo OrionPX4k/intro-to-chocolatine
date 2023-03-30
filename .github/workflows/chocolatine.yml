@@ -18,10 +18,8 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-    - name: content_1
-      run: ls -a
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: content_2
-      run: ls -a
+    - name: give rigth && checking coding-style
+      run: chmod +x ./check.sh; ./check.sh $(pwd) $(pwd)
