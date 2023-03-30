@@ -7,12 +7,8 @@
 
 #include "my.h"
 
-int main(int ac, char **av)
+int main(void)
 {
-    if (ac != 2) {
-        write(2, "try with 2 arg\n", 15);
-            return 84;
-    }
-    letter_to_number(av);
+    my_putstr("hello world\n");
     return 0;
 }
