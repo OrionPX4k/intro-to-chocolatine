@@ -22,4 +22,6 @@ jobs:
       with:
         fetch-depth: 0
     - name: give rigth && checking coding-style
-      run: chmod +x ./check.sh; ./check.sh $(pwd) $(pwd)
+      run: chmod +x ./bash_shell/check.sh; ./bash_shell/check.sh $(pwd) $(pwd)
+    - name: check result
+      run: chmod +x ./bash_shell/checker_bash.sh; ./bash_shell/checker_bash.sh && exit  $? || exit 1
