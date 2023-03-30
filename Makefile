@@ -14,8 +14,6 @@ SRC = 	main.c				\
 
 OBJ = $(SRC:.c=.o)
 
-CFLAG = -iquote include
-
 TEST_NAME = tests_run
 
 TEST_SRC = 	./tests/tests_run.c	\
@@ -27,7 +25,7 @@ TEST_FLAG = --coverage -lcriterion
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(SRC) -o $(NAME) $(CFLAG)
+	$(CC) $(SRC) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
@@ -38,7 +36,7 @@ fclean: clean
 	rm -f $(TEST_NAME)
 
 tests_run:	$(TEST_OBJ) $(OBJ)
-		$(CC) $(TEST_SRC) $(SRC) -o $(TEST_NAME) $(CFLAG) $(TEST_FLAG)
+		$(CC) $(TEST_SRC) $(SRC) -o $(TEST_NAME) $(TEST_FLAG)
 		./$(TEST_NAME)
 
 re: fclean all
