@@ -15,7 +15,7 @@ void redirect_all_stdout(void)
     cr_redirect_stderr();
 }
 
-Test(my_putstr, .init = redirect_all_stdout)
+Test(my_putstr, simple_string, .init = redirect_all_stdout)
 {
     my_putstr("hello world\n");
     cr_assert_stdout_eq_str("hello world\n");
