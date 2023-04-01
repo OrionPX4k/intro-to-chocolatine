@@ -20,7 +20,7 @@ TEST_SRC = 	./tests/tests_run.c	\
 
 TEST_OBJ =	$(TEST_SRC:.c=.o)
 
-TEST_FLAG = --coverage -lcriterion
+TEST_FLAG = 	--coverage -lcriterion
 
 all: $(NAME)
 
